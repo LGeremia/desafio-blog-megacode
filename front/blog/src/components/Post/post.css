@@ -1,0 +1,15 @@
+.post{
+    align-items: flex-start;
+    flex-direction: column;
+    text-align: justify;
+    align-content: center;
+    margin: 16px 8px;
+}
+
+.post-header{
+    flex-direction: row;
+    width: 100%;
+    align-content: space-between;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(160, 160, 160, 0.8);
+}

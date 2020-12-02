@@ -1,0 +1,16 @@
+{
+  "name": "server-blog",
+  "version": "1.0.0",
+  "description": "servidor do Blog feito para o de teste da Megacode",
+  "main": "index.js",
+  "author": "Leonardo Geremia",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "eslint": "^7.14.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.17",
+    "nodemon": "^2.0.6"
+  }
+}
