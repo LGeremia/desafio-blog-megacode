@@ -35,6 +35,7 @@ app.post('/post', async (req, res) => {
 app.delete('/post/:id', async(req,res)=>{
   try {
     const post = await postModel.findByIdAndDelete(req.params.id);
+    console.log(req);
     if(!post) res.status(404).send("Nenhum post encontrado!");
     res.status(200).send({
       "message": "Post excluido com sucesso!",
