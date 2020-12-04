@@ -11,8 +11,7 @@ const Home = () => {
     async function fetchData(){
       try {
         const res = await axios.get('http://localhost:3333/posts');
-        setPosts(...posts, res.data);
-        console.log(res.data);
+        setPosts(res.data);
       } catch (err) {
         console.error(err);
       }
