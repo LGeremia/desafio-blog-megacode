@@ -1,5 +1,6 @@
 import express from 'express';
 import postModel from '../models/post.js'
+import moment from 'moment-timezone';
 
 const app = express();
 
@@ -22,8 +23,14 @@ app.get('/post/:id',async(req,res)=>{
   }
 });
 
-app.post('/post', async (req, res) => {
-    const post = new postModel(req.body);
+app.post('/post', async(req, res) => {
+    const dateBrazil = moment.tz(Date.now(), 'America/Sao_Paulo');
+    const data = {
+      title: req.body.title,
+      contend: req.body.contend,
+      created_date: dateBrazil
+    };
+    const post = new postModel(data);
     try {
       await post.save();
       res.send(post);

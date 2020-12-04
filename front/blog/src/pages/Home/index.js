@@ -1,5 +1,4 @@
 import {useState, useEffect} from 'react';
-import Post from '../../components/Post/post';
 import Header from '../../components/Header/header';
 import Sidebar from '../../components/Sidebar/sidebar';
 import './home.css';
@@ -8,14 +7,17 @@ import axios from 'axios';
 const Home = () => {
   const [posts, setPosts] = useState([]);
 
-  useEffect(async()=>{
-    try {
-      const res = await axios.get('http://localhost:3333/posts');
-      setPosts(...posts, res.data);
-      console.log(res.data);
-    } catch (err) {
-      console.error(err);
+  useEffect(()=>{
+    async function fetchData(){
+      try {
+        const res = await axios.get('http://localhost:3333/posts');
+        setPosts(...posts, res.data);
+        console.log(res.data);
+      } catch (err) {
+        console.error(err);
+      }
     }
+    fetchData();
   },[]);
 
   async function handleDeletPost(id){
@@ -54,7 +56,7 @@ const Home = () => {
                   </div>
                 </div>
                 <span>
-                    11/11/2020 16:48
+                    {post.created_date}
                 </span>
                 <p key={post.id} className="post-text">
                     {post.contend}

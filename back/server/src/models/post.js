@@ -1,6 +1,4 @@
 import mongoose from 'mongoose';
-import moment from 'moment-timezone';
-const dateBrazil = moment.tz(Date.now(), 'America/Sao_Paulo');
 
 const PostSchema = new mongoose.Schema({
   title: {
@@ -15,7 +13,7 @@ const PostSchema = new mongoose.Schema({
     trim: true
   },
   created_date: {
-    type: Date, default: dateBrazil,
+    type: Date,
     required: true
   },
 });
