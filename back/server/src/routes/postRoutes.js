@@ -64,8 +64,13 @@ app.delete('/post/:id', async(req,res)=>{
 
 app.patch('/post/:id', async(req,res)=>{
   try {
-    await postModel.findByIdAndUpdate(req.params.id, req.body);
-    await postModel.save();
+    const dateBrazil = moment.tz(Date.now(), 'America/Sao_Paulo');
+    const data = {
+      title: req.body.title,
+      contend: req.body.contend,
+      created_date: dateBrazil
+    };
+    await postModel.findByIdAndUpdate(req.params.id, data);
     res.status(200).send({
       "message": "Post atualizado com sucesso!"
     });

@@ -3,6 +3,7 @@ import Header from '../../components/Header/header';
 import Sidebar from '../../components/Sidebar/sidebar';
 import './home.css';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
@@ -50,9 +51,11 @@ const Home = () => {
                       </b>
                   </h5>
                   <div className="post-actions">
-                    <button onClick={()=>handleEditPost(post._id)}>
-                        E
-                    </button>
+                    <Link to={`/EditPost/${post._id}`}>
+                      <button>
+                      E
+                      </button>
+                    </Link>
                     <button onClick={()=>handleDeletPost(post._id)}>
                         X
                     </button>
