@@ -28,6 +28,10 @@ const Home = () => {
     }
   }
 
+  async function handleEditPost(id){
+    
+  }
+
   return (
     <div className="Home">
       <Header />
@@ -46,7 +50,7 @@ const Home = () => {
                       </b>
                   </h5>
                   <div className="post-actions">
-                    <button>
+                    <button onClick={()=>handleEditPost(post._id)}>
                         E
                     </button>
                     <button onClick={()=>handleDeletPost(post._id)}>

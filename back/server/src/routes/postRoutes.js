@@ -5,7 +5,17 @@ import moment from 'moment-timezone';
 const app = express();
 
 app.get('/posts', async (req, res) => {
-  const posts = await postModel.find({});
+  const posts = await postModel.find({}).sort('-created_date');
+
+  try {
+    res.send(posts);
+  } catch (err) {
+    res.status(500).send(err);
+  }
+});
+
+app.get('/latestPosts', async (req, res) => {
+  const posts = await postModel.find({}).sort('-created_date').limit(5);
 
   try {
     res.send(posts);
@@ -16,7 +26,7 @@ app.get('/posts', async (req, res) => {
 
 app.get('/post/:id',async(req,res)=>{
   try {
-    const post = await postModel.findById({id: req.params.id});
+    const post = await postModel.findById({_id: req.params.id});
     res.send(post);
   } catch (err) {
     res.status(500).send(err)

@@ -8,7 +8,7 @@ const Sidebar = ()=>{
     useEffect(()=>{
         async function fetchData(){
         try {
-            const res = await Axios.get('http://localhost:3333/posts');
+            const res = await Axios.get('http://localhost:3333/latestPosts');
             setPosts(res.data);
         } catch (err) {
             console.error(err);

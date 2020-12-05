@@ -1,4 +1,3 @@
-import react from 'react';
 import Form from '../../components/Form/form';
 import Header from '../../components/Header/header'
 
