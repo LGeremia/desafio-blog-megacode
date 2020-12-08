@@ -14,5 +14,5 @@ mongoose.connect('mongodb+srv://blog:blogPassword@blog-megacode.pinvn.mongodb.ne
 //
 
 app.use(postRoutes);
-
-app.listen(3333);
+var porta = process.env.PORT || 8080;
+app.listen(porta);
