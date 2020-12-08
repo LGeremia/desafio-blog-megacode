@@ -6,6 +6,7 @@ import axios from 'axios';
 import {Link} from 'react-router-dom';
 import Pagination from "react-js-pagination";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {format, parseISO} from "date-fns";
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
@@ -71,7 +72,10 @@ const Home = () => {
                   </div>
                 </div>
                 <span>
-                    {post.created_date}
+                    {format(
+                      parseISO(post.created_date), 
+                      "'Dia' dd 'de' MMMM', às ' HH:mm'h'"
+                    )}
                 </span>
                 <p key={post.id} className="post-text">
                     {post.contend}
