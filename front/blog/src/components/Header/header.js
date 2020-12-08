@@ -7,9 +7,14 @@ const Header = () =>{
         <header className="Header">
             <div className="container-fluid Teste">
                 <div className="row">
-                    <div className="col-6 col-md-9 d-flex add-post">
+                    <div className="col-6 col-md-9 d-none d-md-flex add-post">
                         <Button variant="outlined" href="/CreatePost">
                             NOVA PUBLICAÇÃO
+                        </Button>
+                    </div>
+                    <div className="col-6 col-md-9 d-md-none d-sm-flex add-post">
+                        <Button variant="outlined" href="/CreatePost">
+                            +
                         </Button>
                     </div>
                     <div className="col-6 col-md-3 d-flex user-status">

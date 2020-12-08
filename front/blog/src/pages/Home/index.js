@@ -5,6 +5,7 @@ import './home.css';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 import Pagination from "react-js-pagination";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Home = () => {
   const [posts, setPosts] = useState([]);

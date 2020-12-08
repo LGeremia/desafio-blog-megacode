@@ -19,3 +19,26 @@
     justify-content: space-between;
     border-bottom: 1px solid rgba(160, 160, 160, 0.8);
 }
+
+.pagination{
+    align-items: center;
+    justify-content: center;
+}
+
+.pagination li{
+    padding: 2px;
+    margin: 2px;
+    cursor: pointer;
+    min-width: 30px;
+    background-color: rgba(230, 230, 230, 0.8);
+    border: 1px solid rgba(100,100,100,0.7);
+}
+
+.pagination li a{
+    text-decoration: none !important;
+    color: black;
+}
+
+.pagination li:hover{
+    opacity: 0.5;
+}
